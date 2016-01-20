@@ -21,7 +21,8 @@ public class User {
 	private Long id;
 	@Column(name="username")
 	private String userName;
-	private Calendar dataNascimento;
+	@Column(name="birthdate")
+	private Calendar birthDate;
 	@Email
 	private String email;
 	@Size(min=8, max=15)
@@ -45,12 +46,12 @@ public class User {
 		this.userName = userName;
 	}
 
-	public Calendar getDataNascimento() {
-		return dataNascimento;
+	public Calendar getBirthDate() {
+		return birthDate;
 	}
 
-	public void setDataNascimento(Calendar dataNascimento) {
-		this.dataNascimento = dataNascimento;
+	public void setBirthDate(Calendar birthDate) {
+		this.birthDate = birthDate;
 	}
 
 	public String getEmail() {
@@ -71,10 +72,9 @@ public class User {
 
 	@Override
 	public String toString() {
-		return "User [id=" + id + ", userName=" + userName + ", dataNascimento=" + dataNascimento + ", email=" + email
+		return "User [id=" + id + ", userName=" + userName + ", birthDate=" + birthDate + ", email=" + email
 				+ ", password=" + password + "]";
 	}
-	
-	
+
 	
 }
