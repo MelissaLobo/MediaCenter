@@ -2,6 +2,7 @@ package controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import dao.UserDao;
@@ -16,20 +17,20 @@ public class UserController {
 	private UserDao userDao;
 	
 	@RequestMapping("/newAccount")
-	public String formNewAccount() {
+	public String showNewAccount(Model model){
+		model.addAttribute("user", new User());
 		return "newAccount";
 	}
 	
-	@RequestMapping("/account")
-	public String save(User user){
-		
+	@RequestMapping("/createAccount")
+	public String showCreateAccount(User user){
 		userDao.create(user);
 		System.out.println("user");
-		return "user-account";
+		return "accountCreated";
 	}
 	
 	@RequestMapping("/login")
-	public String login(User user){
+	public String showLogin(){
 		return "login";
 	}
 }
