@@ -20,7 +20,7 @@ public class User {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	@Column(name="username")
-	private String username;
+	private String userName;
 	private Calendar dataNascimento;
 	@Email
 	private String email;
@@ -37,12 +37,12 @@ public class User {
 		this.id = id;
 	}
 
-	public String getNome() {
-		return username;
+	public String getUserName() {
+		return userName;
 	}
 
-	public void setNome(String nome) {
-		this.username = nome;
+	public void setUserName(String userName) {
+		this.userName = userName;
 	}
 
 	public Calendar getDataNascimento() {
@@ -61,20 +61,20 @@ public class User {
 		this.email = email;
 	}
 
-	public String getSenha() {
+	public String getPassword() {
 		return password;
 	}
 
-	public void setSenha(String senha) {
-		this.password = senha;
+	public void setPassword(String password) {
+		this.password = password;
 	}
 
 	@Override
 	public String toString() {
-		return "User [id=" + id + ", username=" + username + ", dataNascimento=" + dataNascimento + ", email=" + email
+		return "User [id=" + id + ", userName=" + userName + ", dataNascimento=" + dataNascimento + ", email=" + email
 				+ ", password=" + password + "]";
 	}
-
+	
 	
 	
 }
