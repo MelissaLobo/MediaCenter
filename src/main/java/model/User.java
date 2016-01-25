@@ -1,7 +1,4 @@
 package model;
-
-import java.util.Calendar;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -21,8 +18,6 @@ public class User {
 	private Long id;
 	@Column(name="username")
 	private String userName;
-	@Column(name="birthdate")
-	private Calendar birthDate;
 	@Email
 	private String email;
 	@Size(min=8, max=15)
@@ -46,14 +41,6 @@ public class User {
 		this.userName = userName;
 	}
 
-	public Calendar getBirthDate() {
-		return birthDate;
-	}
-
-	public void setBirthDate(Calendar birthDate) {
-		this.birthDate = birthDate;
-	}
-
 	public String getEmail() {
 		return email;
 	}
@@ -72,7 +59,7 @@ public class User {
 
 	@Override
 	public String toString() {
-		return "User [id=" + id + ", userName=" + userName + ", birthDate=" + birthDate + ", email=" + email
+		return "User [id=" + id + ", userName=" + userName + ", email=" + email
 				+ ", password=" + password + "]";
 	}
 

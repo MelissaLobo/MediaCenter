@@ -1,6 +1,11 @@
 package model;
+import java.util.List;
 
+/**
+ * @author MelissaLobo mellobomel@gmail.com
+ */
 import javax.persistence.Column;
+import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -17,8 +22,10 @@ public class Media {
 	@Column(name="namefile")
 	private String nameFile;
 	private String file;
-	private String tag;
 	private Category category;
+	
+	@ElementCollection
+	private List<String> tag;
 	
 	public Long getId() {
 		return id;
@@ -38,12 +45,6 @@ public class Media {
 	public void setFile(String file) {
 		this.file = file;
 	}
-	public String getTag() {
-		return tag;
-	}
-	public void setTag(String tag) {
-		this.tag = tag;
-	}
 	public Category getCategory() {
 		return category;
 	}
@@ -55,7 +56,5 @@ public class Media {
 		return "Media [id=" + id + ", nameFile=" + nameFile + ", file=" + file + ", tag=" + tag + ", category="
 				+ category + "]";
 	}
-	
-	
 	
 }
