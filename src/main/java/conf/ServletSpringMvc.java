@@ -1,5 +1,7 @@
 package conf;
-
+/**
+ * @author MelissaLobo mellobomel@gmail.com
+ */
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
 public class ServletSpringMvc extends AbstractAnnotationConfigDispatcherServletInitializer{

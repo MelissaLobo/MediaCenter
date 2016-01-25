@@ -1,5 +1,7 @@
 package conf;
-
+/**
+ * @author MelissaLobo mellobomel@gmail.com
+ */
 import java.util.Properties;
 
 import javax.persistence.EntityManagerFactory;
