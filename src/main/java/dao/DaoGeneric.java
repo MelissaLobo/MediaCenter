@@ -1,5 +1,7 @@
 package dao;
-
+/**
+ * @author MelissaLobo mellobomel@gmail.com
+ */
 import java.io.Serializable;
 import java.lang.reflect.ParameterizedType;
 import java.util.List;
