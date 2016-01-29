@@ -1,4 +1,7 @@
 package conf;
+import javax.servlet.Filter;
+
+import org.springframework.web.filter.CharacterEncodingFilter;
 /**
  * @author MelissaLobo mellobomel@gmail.com
  */
@@ -22,5 +25,11 @@ public class ServletSpringMvc extends AbstractAnnotationConfigDispatcherServletI
         return new String[] {"/"};
     }
 
+    @Override
+    protected Filter[] getServletFilters() {
+    	CharacterEncodingFilter encodingFilter= new CharacterEncodingFilter();
+    	encodingFilter.setEncoding("UTF-8");
+    	return new Filter[]{encodingFilter};
+    }
 }
 
