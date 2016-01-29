@@ -1,43 +1,22 @@
-<!DOCTYPE html>
-<html lang="en">
-	<!--InformaÃ§Ãµes da Pagina -->
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns:ui="http://java.sun.com/jsf/facelets">
+	<!--Informacoes da Pagina -->
 	<head>
 		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
-		<meta charset="utf-8">
 		<title>Bootstrap Login Form</title>
 		<meta name="generator" content="Bootply" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-		
+		<link href="template.html" rel="stylesheet">
 		<link href="css/bootstrap.min.css" rel="stylesheet">
  		<link href="css/style.css" rel="stylesheet">
-
 	</head>
 
 <body>
-	<nav class="navbar navbar-inverse navbar-fixed-top">
-		 <div class="container-fluid">
-		  <div class="navbar-header">
-		   <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-		    <span class="sr-only">Toggle navigation</span>
-		    <span class="icon-bar"></span>
-		    <span class="icon-bar"></span>
-		    <span class="icon-bar"></span>
-		   </button>
-		   <a class="navbar-brand" href="#">Central de Midias em Algodoes Doce</a>
-		  </div>
-		  <div id="navbar" class="navbar-collapse collapse">
-		   <ul class="nav navbar-nav navbar-right">
-		    <li><a href="#">Início</a></li>
-		    <li><a href="#">Opções</a></li>
-		    <li><a href="#">Perfil</a></li>
-		    <li><a href="#">Ajuda</a></li>
-		   </ul>
-		  </div>
-		 </div>
-	</nav>
   <div class="wrapper">
     <form class="form-signin">       
-      <h2 class="form-signin-heading">Please login</h2>
+      <h2 class="form-signin-heading">FaÃ§a seu Login</h2>
       <input type="text" class="form-control" name="email" placeholder="Email Address"  />
       <input type="password" class="form-control" name="password" placeholder="Password" />      
       <label class="checkbox">

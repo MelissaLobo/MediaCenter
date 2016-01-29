@@ -1,6 +1,8 @@
 <!DOCTYPE html>
-<html lang="pt">
-	<!--Informações da Pagina -->
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<html>
+	<!--InformaÃ§Ãµes da Pagina -->
 	<head>
 		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
 		<meta charset="utf-8">
@@ -23,17 +25,16 @@
 	     <span class="icon-bar"></span>
 	     <span class="icon-bar"></span>
 	    </button>
-		  <a class="navbar-brand" href="#">Central de Midias Algod�o Doce</a>
+		  <a class="navbar-brand" href="/">Central de Midias Algodão Doce</a>
 	</div>
 	<div id="navbar" class="navbar-collapse collapse">
 	    <ul class="nav navbar-nav navbar-right">
-	     <li><a href="/">In�cio</a></li>
-	     <li><a href="#">Pre�os</a></li>
+	     <li><a href="/">Início</a></li>
+	     <li><a href="#">Preços</a></li>
 	     <li><a href="#">Perfil</a></li>
 	     <li><a href="/">Sair</a></li>
 		 <li><a href="newAccount" style="margin-right: 5px;" class="btn btn-sm btn-success active navbar-right offset" role="button">Nova conta</a></li>
-		  
-	    </ul>
+		</ul>
 	</div>
   </div>
  </nav>

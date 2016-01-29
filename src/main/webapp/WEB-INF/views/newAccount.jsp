@@ -15,16 +15,16 @@
 <h1>Cadastro:</h1>
 	<form id="teste" class="form-signin" action="/createAccount" method="POST">
 
-		Nome: <input type="text" name="userName"> 
+		Nome: <input type="text" class="form-control" name="userName"> 
 		<br>
-		Email: <input type="text" name="email"> 
+		Email: <input type="text" class="form-control" name="email"> 
         <br>
-		Senha: <input type="password" name="password">
+		Senha: <input type="password" class="form-control" name="password">
 		<br>
 		Confirmar Senha: 
 		<br>
-		<input name="submit" type="submit" value="Create Account"
-					class="login" />
+		<input name="submit" type="submit" value="Criar Conta"
+					class="btn btn-lg btn-primary btn-block" />
 	</form>
 	
 </body>
