@@ -7,11 +7,13 @@ import java.lang.reflect.ParameterizedType;
 import java.util.List;
 
 import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 
 public class DaoGeneric <T, I extends Serializable> {
 	// T é o tipo, a classe. E I é o tipo do id, int ou long
 
+	@PersistenceContext
 	protected EntityManager entityManager;
 	protected final Class<T> clazz;
 

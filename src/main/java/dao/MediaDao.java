@@ -1,24 +1,20 @@
 package dao;
 
 import java.io.Serializable;
+import java.util.List;
 
-import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
 
 import org.springframework.stereotype.Repository;
-import org.springframework.transaction.annotation.Transactional;
 
 import model.Media;
-import model.User;
 
 @Repository
-@Transactional
-public class MediaDao extends DaoGeneric<User, Serializable> {
+public class MediaDao extends DaoGeneric<Media, Serializable> {
 
-	@PersistenceContext
-	private EntityManager manager;
-	
-	public void create(Media media) {
-		manager.persist(media);
+	public List<Media> buscaMedia(Media media){
+			Query query = entityManager.createQuery("from Media m where m.nameFile like :nameFile");
+			query.setParameter("nameFile", "%"+media+"%");
+			return query.getResultList();
 	}
 }
