@@ -1,5 +1,7 @@
 package controller;
 
+import java.util.List;
+
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -40,6 +42,7 @@ public class MediaController {
 	}
 	
 	@RequestMapping(value="/createMedia", method=RequestMethod.POST)
+	@Transactional
 	public ModelAndView showCreateMedia(@Valid Media media, BindingResult result, RedirectAttributes redirectAttributes){
 		
 		// Verificando se tem erros de validacao
@@ -58,7 +61,15 @@ public class MediaController {
 	public ModelAndView showListMedia(Media media){
 		
 		ModelAndView modelAndView = new ModelAndView("medias");
-		modelAndView.addObject("medias", mediaDao.findAll());
+		List<Media> lista = mediaDao.findAll();
+		
+	/*	for(Media mediaa :lista){
+			Hibernate.initialize(mediaa.getTag());
+		}
+		*/
+		mediaDao.buscaMedia(media);
+		
+		modelAndView.addObject("medias", lista);
 		
 		return modelAndView; 
 	}
