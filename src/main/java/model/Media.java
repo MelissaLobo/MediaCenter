@@ -26,35 +26,50 @@ public class Media {
 	
 	@ElementCollection
 	private List<String> tag;
-	
+		
+	public List<String> getTag() {
+		return tag;
+	}
+
 	public Long getId() {
 		return id;
 	}
+
 	public void setId(Long id) {
 		this.id = id;
 	}
+
 	public String getNameFile() {
 		return nameFile;
 	}
+
 	public void setNameFile(String nameFile) {
 		this.nameFile = nameFile;
 	}
+
 	public String getFile() {
 		return file;
 	}
+
 	public void setFile(String file) {
 		this.file = file;
 	}
+
 	public Category getCategory() {
 		return category;
 	}
+
 	public void setCategory(Category category) {
 		this.category = category;
 	}
+
+	public void setTag(List<String> tag) {
+		this.tag = tag;
+	}
+
 	@Override
 	public String toString() {
-		return "Media [id=" + id + ", nameFile=" + nameFile + ", file=" + file + ", tag=" + tag + ", category="
-				+ category + "]";
+		return "Media [id=" + id + ", nameFile=" + nameFile + ", file=" + file + ", category=" + category + ", tag="
+				+ tag + "]";
 	}
-	
 }
