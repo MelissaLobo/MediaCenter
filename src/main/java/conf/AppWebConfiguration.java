@@ -10,18 +10,22 @@ import org.springframework.format.datetime.DateFormatter;
 import org.springframework.format.datetime.DateFormatterRegistrar;
 import org.springframework.format.support.DefaultFormattingConversionService;
 import org.springframework.format.support.FormattingConversionService;
+import org.springframework.web.multipart.MultipartResolver;
+import org.springframework.web.multipart.support.StandardServletMultipartResolver;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
 import controller.HomeController;
+import dao.MediaDao;
 import dao.UserDao;
+import infra.FileSaver;
 
 // Classe de configuração gerenciada pelo spring
 
 @EnableWebMvc
-@ComponentScan(basePackageClasses={HomeController.class, UserDao.class})
+@ComponentScan(basePackageClasses={HomeController.class, UserDao.class, MediaDao.class, FileSaver.class})
 public class AppWebConfiguration extends WebMvcConfigurerAdapter{
 
 	@Bean
@@ -51,7 +55,7 @@ public class AppWebConfiguration extends WebMvcConfigurerAdapter{
         return messageSource;
     }
 	
-	//Config Data 
+	//Config Data
 	@Bean
 	public FormattingConversionService mvcConversionService(){
 		DefaultFormattingConversionService conversionService = new DefaultFormattingConversionService();
@@ -61,5 +65,11 @@ public class AppWebConfiguration extends WebMvcConfigurerAdapter{
 		
 		return conversionService;
 		
+	}
+	
+	//Config Files
+	@Bean
+	public MultipartResolver multipartResolver(){
+		return new StandardServletMultipartResolver();
 	}
 }

@@ -12,10 +12,12 @@ import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import dao.MediaDao;
+import infra.FileSaver;
 import model.Category;
 import model.Media;
 import validation.MediaValidation;
@@ -25,6 +27,9 @@ public class MediaController {
 	
 	@Autowired
 	private MediaDao mediaDao;
+	
+	@Autowired
+	private FileSaver fileSaver;
 	
 	@InitBinder
 	public void initBinder(WebDataBinder binder){
@@ -43,12 +48,16 @@ public class MediaController {
 	
 	@RequestMapping(value="/createMedia", method=RequestMethod.POST)
 	@Transactional
-	public ModelAndView showCreateMedia(@Valid Media media, BindingResult result, RedirectAttributes redirectAttributes){
-		
+	public ModelAndView showCreateMedia(MultipartFile file, @Valid Media media, BindingResult result, RedirectAttributes redirectAttributes){
+				
 		// Verificando se tem erros de validacao
 		if(result.hasErrors()){
 			return showNewMedia();
 		}
+		
+		String path = fileSaver.write("file", file);
+		media.setFile(path);
+		
 		
 		System.out.println("Cadastrando a Midia " + media);
 		mediaDao.create(media);
