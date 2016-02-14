@@ -21,7 +21,7 @@
 	 <h1>Nova Midia:</h1> 
 		
 		<form:form  class="form-signin" action="/createMedia" method="POST" commandName="media">
-			<h2 class="form-signin-heading">Nova Midia</h2>
+			<h2 class="form-signin-heading" enctype="multipart/form-data">Nova Midia</h2>
 		<div>
 			<label>Nome do Arquivo:</label>
 			<input type="text" class="form-control" name="nameFile"> 
