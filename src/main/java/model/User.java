@@ -22,9 +22,16 @@ public class User {
 	private String email;
 	@Size(min=8, max=15)
 	private String password;
+
 	
 	public User(){}
 
+	public User(String username, String password, String email) {
+		super();
+		this.userName = username;
+		this.password = password;
+		this.email = email;
+	}
 	public Long getId() {
 		return id;
 	}
@@ -59,9 +66,9 @@ public class User {
 
 	@Override
 	public String toString() {
-		return "User [id=" + id + ", userName=" + userName + ", email=" + email
-				+ ", password=" + password + "]";
+		return "User [id=" + id + ", userName=" + userName + ", email=" + email + ", password=" + password + "]";
 	}
+
 
 	
 }

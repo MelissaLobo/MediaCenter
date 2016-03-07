@@ -31,7 +31,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter implements User
 		        .antMatchers("/home").access("hasRole('ROLE_USER')")
 		        .and()
 		        .formLogin()
-		        .loginPage("/loginForm").permitAll()
+		        .loginPage("/login").permitAll()
 		        .loginProcessingUrl("/dologin").permitAll()
 		        .usernameParameter("username")
 		        .passwordParameter("password")
