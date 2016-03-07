@@ -13,7 +13,7 @@
 <title>Pagina de Cadastro de Midia</title>
 </head>
 <body>
-<jsp:include page="template.jsp"/>
+<jsp:include page="template.jsp"/>go
  <jsp:include page="busca.jsp"/>
  
    <div class="container">
