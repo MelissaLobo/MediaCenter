@@ -10,5 +10,5 @@ import model.User;
 
 @Repository //Mapeia a Classe
 public class UserDao extends DaoGeneric<User, Serializable> {
-
+	
 }
