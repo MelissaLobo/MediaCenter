@@ -37,4 +37,9 @@ public class UserController {
 	public String showLogin(){
 		return "login";
 	}
+	
+	@RequestMapping("/logout")
+	public String showLogout(){
+		return "logout";
+	}
 }
