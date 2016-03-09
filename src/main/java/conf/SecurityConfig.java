@@ -1,6 +1,7 @@
-package conf;
+	package conf;
 import java.util.Arrays;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.encoding.Md5PasswordEncoder;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
@@ -21,6 +22,13 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter implements User
 	public void configure(AuthenticationManagerBuilder auth) throws Exception {
 		auth.userDetailsService(this).passwordEncoder(new Md5PasswordEncoder());
 	}
+	
+	 @Autowired
+	    public void configureGlobalSecurity(AuthenticationManagerBuilder auth) throws Exception {
+	        auth.inMemoryAuthentication().withUser("melissa").password("mel123").roles("USER");
+	        auth.inMemoryAuthentication().withUser("admin").password("root123").roles("ADMIN");
+	        auth.inMemoryAuthentication().withUser("dba").password("root123").roles("ADMIN","DBA");
+	    }
 	
 	@Override
 	public void configure(HttpSecurity http) throws Exception {
